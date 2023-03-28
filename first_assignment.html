@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>주급 계산 결과</h1>
+	<div id="result"></div>
+	<script>
+
+let employees = [
+  { name: "홍길동", hoursWorked: 40, hourlyRate: 10000 },
+  { name: "임꺽정", hoursWorked: 15, hourlyRate: 20000 },
+  { name: "장길산", hoursWorked: 20, hourlyRate: 20000 },
+  { name: "강감찬", hoursWorked: 30, hourlyRate: 15000 },
+  { name: "이순신", hoursWorked: 40, hourlyRate: 30000 }
+];
+
+function calculatePay(employee) {
+  let totalPay = employee.hoursWorked * employee.hourlyRate;
+  return `이름 : ${employee.name}  근무시간 : ${employee.hoursWorked}  시간당급여액 : ${employee.hourlyRate}  총액 : ${totalPay}`;
+}
+
+for (let i = 0; i < employees.length; i++) {
+  console.log(calculatePay(employees[i]));
+}
+
+</script>
+
+</body>
+</html>
+
