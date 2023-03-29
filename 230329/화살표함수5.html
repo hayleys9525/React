@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>화살표함수 과제</h1>
+</body>
+</html>
+
+<script>
+    let rect=[
+        {w:5, h:4},
+        {w:15, h:14},
+        {w:7, h:8},
+        {w:9, h:4},
+        {w:5, h:7},
+    ];
+
+    //map
+    let r = rect.map((r)=>{
+        r.len = (r.w+r.h)*2;
+        r.surface=r.w*r.h;
+        return r;
+    });
+
+    console.log(r);
+    console.log(rect);
+
+
+const employees = [
+  { name: "홍길동", hoursWorked: 40, hourlyRate: 10000 },
+  { name: "임꺽정", hoursWorked: 15, hourlyRate: 20000 },
+  { name: "장길산", hoursWorked: 20, hourlyRate: 20000 },
+  { name: "강감찬", hoursWorked: 30, hourlyRate: 15000 },
+  { name: "이순신", hoursWorked: 40, hourlyRate: 30000 }
+];
+
+const calculatePay = (employee) => {
+  const totalPay = employee.hoursWorked * employee.hourlyRate;
+  return `이름 : ${employee.name}  근무시간 : ${employee.hoursWorked}  시간당급여액 : ${employee.hourlyRate}  총액 : ${totalPay}`;
+};
+
+employees.forEach((employee) => {
+  console.log(calculatePay(employee));
+});
+
+//총점, 평균
+s.map( (item)=>{
+    item.total = item.kor + item.mat + item.eng;
+    item.avg = item.total/3;
+    return item;
+}).forEach(item=>{
+    console.log(`${item.name} ${item.total} ${item.avg}`);
+});
+
+
+</script>
+
