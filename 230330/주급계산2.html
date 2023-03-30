@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    $(btnConfirm).click(()=>{
+        worktime = parseInt($("#worktime"))
+    })
+    base_pay = worktime*perpay;
+    over_pay=0;
+    if(worktime>20)
+    {
+        over_pay = (worktime-20)*perpay*0.5;
+    }
+    temp=`${name}님의 기본금${base_pay} 연장수당${over_pay} 총액
+    ${base_pay + over_pay} `;
+
+    $("result").html( temp );
+
+    $("btnClear").click(()=>{
+        $("input").val("");
+
+        /*input=document.getElementsByTagName("input");
+        for(i=0; i<input.length; i++)
+        {
+            input[i].value=""
+        }*/
+    })
+
+
+
+
+</script>
