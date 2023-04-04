@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>성적처리</title>
+
+  </head>
+  <body>
+    <form>
+      <div class="box">이름</div>
+      <input type="text" name="name" id="name">
+      <br>
+      <div class="box">국어</div>
+      <input type="number" name="korean" id="korean">
+      <br>
+      <div class="box">영어</div>
+      <input type="number" name="english" id="english">
+      <br>
+      <div class="box">수학</div>
+      <input type="number" name="math" id="math">
+      <br>
+      <div class="box"></div>
+      <input type="button" value="계산하기" onclick="calculate()">
+      <br>
+      <div class="box">결과확인</div>
+      <div class="box" id="result"></div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      function calculate() {
+        const name = $('#name').val();
+        const korean = parseInt($('#korean').val());
+        const english = parseInt($('#english').val());
+        const math = parseInt($('#math').val());
+        const total = korean + english + math;
+        const average = total / 3;
+        const result = name + '의 총점은 ' + total + ' 이고 평균은 ' + average + '입니다';
+        $('#result').text(result);
+      }
+    </script>
+  </body>
+</html>
