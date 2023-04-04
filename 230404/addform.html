@@ -1,0 +1,28 @@
+<!-- 
+x : 4
+y : 5
+더하기
+
+/addform  -> addform.html이 뜬다
+/add 4+5 = 9
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Addition Form</title>
+	<script src="addition.js"></script>
+</head>
+<body>
+	<form>
+		<label for="x">x :</label>
+		<input type="text" id="x" name="x">
+		<br>
+		<label for="y">y :</label>
+		<input type="text" id="y" name="y">
+		<br>
+		<input type="button" value="더하기" onclick="add()">
+	</form>
+</body>
+</html>
