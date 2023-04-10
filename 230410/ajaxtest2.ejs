@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A J A X / T E S T</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
+</head>
+<body>
+    <form>
+        x   :   <input type="text" name="x" id="x"/><br/>
+        y   :   <input type="text" name="y" id="y"/><br/>
+    result  :   <input type="text" name="result" id="result"/><br/>
+                <button type="button" id="btnAdd"> 더하기 </button>
+
+    </form>
+</body>
+</html>
+<script>
+    $(document).ready(()=>{
+        $("#btnAdd").click(()=>{
+            $.ajax({
+                url : "/ajax/add",
+                data : {"x":$("x").val(), "y":$("y").val()}
+                dataType : "json" //결과는 JSON 형태로 반환받겠습니다. 
+            })  //url과 data는 이미 정햊니...JSON 형태임..
+            .done((res,status,error)=>{
+                console.log(res); //사실 이건 필요없지만 그래도 그냥 공부상 해보자. 성공했으면 뭔가 조치 취할 건 없지.
+                $("#result").val(res.result);
+            })// ajax 가 성공했을 때 (서버와 통신이 성공하여 데이터를 가져왔을 때)
+            .fail((res,status,error)=>{
+                console.log(status); // 왜 에러가 났는지를 확인해봄. 
+            })// ajax 가 실패했을 때 (서버와 통신이 실패하여 데이터를 가지고 오지 못했을 때 )
+        })  
+    })
+</script>

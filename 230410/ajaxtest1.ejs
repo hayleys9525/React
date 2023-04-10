@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A J A X / T E S T</title>
+</head>
+<body>
+    <input type="text" name="x" id="x">
+    <div id="result"></div>
+    <button type="button" id="btnCall" onclick="ajaxCall()">AJAX 호출하기</button>
+</body>
+</html>
+<script>
+function ajaxCall(){
+        // 서버와 백그라운드에서 통신을 하고자 합니다. 
+        var xhttp = new XMLHttpRequest(); // 통신을 담당하는 객체를 만든다. 
+        // 서버에서 응답이 있을 경우, 호출된 함수를 작성해서 전달한다. 
+        xhttp.onload = function(){
+            console.log(this.responseText);
+            //xhttp객체에 responseText 라는 속성(프로퍼티)가 있고, 이 속성에
+            //서버에서 전달된 값이 저장되어 있다. (this는 가장 가까운 객체를 지칭함. )
+            document.getElementById("result").innerHTML = this.responseText;
+            }
+        xhttp.open("GET", "/ajax/result1")
+        xhttp.send(); // 서버로 접속 요청을 비동기로 보낸다. 
+}
+</script>
